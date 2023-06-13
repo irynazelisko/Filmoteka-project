@@ -7,4 +7,6 @@ target 'Filmoteka' do
 
   # Pods for Filmoteka
  pod 'Firebase/Auth'
+ pod 'Firebase/Firestore'
+ pod 'Firebase/Storage'
 end
