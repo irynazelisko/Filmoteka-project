@@ -20,6 +20,9 @@ In addition, the program has functionality for logging in and registering users,
 **Architecture pattern**: MVVM </br>
 **Dependency manager:** CocoaPods </br>
 **User authentication:** Firebase </br>
+**Loading indicator display:** MBProgressHUD </br>
+
+
 
  
 
