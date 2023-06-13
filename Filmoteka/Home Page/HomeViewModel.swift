@@ -25,7 +25,7 @@ final class HomeViewModel {
                            return MovieCell(title: movie.title,
                                             year: movie.year,
                                             genre: movie.genre,
-                                            posterImageView: movie.posterImageView,
+                                            posterImage: movie.posterImage,
                                             plot: movie.plot,
                                             url: movie.url,
                                             trackViewUrl: movie.trackViewUrl,
@@ -39,23 +39,20 @@ final class HomeViewModel {
     }
     
     func favoriteIcon(id: Int) -> String {
-        let idString = String(id)
-        if favoriteMovieArray.contains(idString){
+        if favoriteMovieArray.contains(where: { $0.id == id }) {
             return "heart.fill"
         }
         return "heart"
     }
     
-    var favoriteMovieArray: [String] = []
+    var favoriteMovieArray: [MovieCell] = []
     
-    func addToFavorites(with id: Int) {
-        let idString = String(id)
-        favoriteMovieArray.append(idString)
+    func addToFavorites(movie: MovieCell) {
+        favoriteMovieArray.append(movie)
     }
-    
+
     func removeFromFavorites(with id: Int) {
-        let idString = String(id)
-        if let index = favoriteMovieArray.firstIndex(of: idString) {
+        if let index = favoriteMovieArray.firstIndex(where: { $0.id == id }) {
             favoriteMovieArray.remove(at: index)
         }
     }

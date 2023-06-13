@@ -29,10 +29,8 @@ final class MoviesTableViewCell: UITableViewCell {
         favoriteButton.setImage(UIImage(systemName: icon), for: .normal)
     }
     
-    
     func setUpData(viewModel: MovieCellViewModel) {
         self.viewModel = viewModel
-        
     }
     
     func initData() {

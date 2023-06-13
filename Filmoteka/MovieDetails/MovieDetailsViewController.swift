@@ -32,7 +32,7 @@ final class MovieDetailsViewController: UIViewController {
         
         
         if let movie = viewModel.movie {
-            posterImageView.image = UIImage(named: movie.posterImageView)
+            posterImageView.image = UIImage(named: movie.posterImage)
             titleLabel.text = movie.title
             genreLabel.text = movie.genre
             yearLabel.text = movie.year

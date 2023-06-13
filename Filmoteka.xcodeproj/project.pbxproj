@@ -139,6 +139,7 @@
 		82ABDE722A34AE7800DEBA09 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				82ED44E42A3246F00067B4CB /* WelcomeViewController.swift */,
 				829FC3D82A325AF9001D02A2 /* LogInViewController.swift */,
 				82D99A372A33BA9A0096B690 /* SignUpViewController.swift */,
 				821E14922A38A6C10011E8CD /* FirestoreService.swift */,
@@ -189,7 +190,6 @@
 				82AA4C062A37120E00580791 /* MovieDetails */,
 				82ABDE782A3506DF00DEBA09 /* API */,
 				82ABDE722A34AE7800DEBA09 /* Authentication */,
-				82ED44E42A3246F00067B4CB /* WelcomeViewController.swift */,
 				82AA4C092A37B82B00580791 /* Favorites */,
 				82ABDE772A34BFD300DEBA09 /* Model */,
 				82ED44F72A3254520067B4CB /* View */,
@@ -512,6 +512,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +542,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

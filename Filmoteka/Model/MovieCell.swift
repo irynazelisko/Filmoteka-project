@@ -11,7 +11,7 @@ struct MovieCell {
     let title: String
     let year: String
     let genre: String
-    let posterImageView: String
+    let posterImage: String
     let plot: String
     let url: String
     let trackViewUrl: String

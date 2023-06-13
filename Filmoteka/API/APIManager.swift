@@ -38,7 +38,7 @@ final class APIManager {
                     return MovieCell(title: movieResult.trackName,
                                      year: year,
                                      genre: movieResult.primaryGenreName,
-                                     posterImageView: movieResult.artworkURL,
+                                     posterImage: movieResult.artworkURL,
                                      plot: movieResult.longDescription,
                                      url: movieResult.previewUrl,
                                      trackViewUrl: movieResult.trackViewUrl,

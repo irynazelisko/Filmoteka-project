@@ -30,7 +30,7 @@ final class MovieCellViewModel: MovieCellPresentationModel {
         self.title = movie.title
         self.year = movie.year
         self.genre = movie.genre
-        self.posterImageView = movie.posterImageView
+        self.posterImageView = movie.posterImage
         self.plot = movie.plot
     }
     

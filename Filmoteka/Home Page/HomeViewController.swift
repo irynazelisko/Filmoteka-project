@@ -21,20 +21,18 @@ final class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+//        searchBar.barTintColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
         if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
             searchTextField.textColor = UIColor.white
         }
+        self.tabBarController?.navigationItem.hidesBackButton = true
         self.tableView.register(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
         homeViewModel.searchMovies(withQuery: "action")
         homeViewModel.updateTableView = { [weak self] in
             self?.tableView.reloadData()
         }
-        favoritiesViewModel.favoritesList = homeViewModel.favoriteMovieArray
+       
     }
-    
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieDetails" {
             if let detailViewController = segue.destination as? MovieDetailsViewController,
@@ -58,7 +56,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = movie.title
         cell.yearLabel.text = movie.year
         cell.genreLabel.text = movie.genre
-        cell.posterImageView.image = UIImage(named: movie.posterImageView)
+        cell.posterImageView.image = UIImage(named: movie.posterImage)
         
         let viewModel = MovieCellViewModel(movie: movie)
         viewModel.loadImage { image in
@@ -85,7 +83,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Створюємо favorite action
         let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { [weak self] (action, view, completion) in
-            self?.homeViewModel.addToFavorites(with: movie.id)
+            self?.homeViewModel.addToFavorites(movie: movie)
             if let icon = self?.homeViewModel.favoriteIcon(id: movie.id) {
                 if let cell = tableView.cellForRow(at: indexPath) as? MoviesTableViewCell {
                     cell.upDateFavoriteButton(icon: icon)
@@ -116,14 +114,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 // MARK: - Search Bar Delegate
 extension HomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let query = searchBar.text {
-            homeViewModel.searchMovies(withQuery: query)
-            searchBar.resignFirstResponder()
-        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        homeViewModel.searchMovies(withQuery: searchText)
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.text = ""
     }
-    
 }

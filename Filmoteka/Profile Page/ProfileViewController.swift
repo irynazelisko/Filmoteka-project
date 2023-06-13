@@ -62,6 +62,7 @@ final class ProfileViewController: UIViewController, UIImagePickerControllerDele
             let resizedImage = resizeImage(image: pickedImage, targetSize: CGSize(width: 180, height: 180))
             profileImageView.image = resizedImage
             profileImageView.contentMode = .scaleAspectFill
+//            saveImageToFirebaseStorage(resizedImage)
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -78,7 +79,4 @@ final class ProfileViewController: UIViewController, UIImagePickerControllerDele
         }
         return scaledImage
     }
-
 }
-
-
