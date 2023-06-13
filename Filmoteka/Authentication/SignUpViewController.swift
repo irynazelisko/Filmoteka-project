@@ -23,17 +23,17 @@ class SignUpViewController: UIViewController {
         if let email = emailTextField.text , let password = passwordTextField.text {
             
             if password.count < 6 {
-                showAlert(withTitle: "Помилка", message: "Password must be at least 6 characters long.")
+                showAlert(withTitle: "Error", message: "Password must be at least 6 characters long.")
                 return
             }
             
             if email.isEmpty || password.isEmpty {
-                showAlert(withTitle: "Помилка", message: "Please enter your email and password.")
+                showAlert(withTitle: "Error", message: "Please enter your email and password.")
                 return
             }
             
             if !isValidEmail(email) {
-                showAlert(withTitle: "Помилка", message: "Please enter a valid email address.")
+                showAlert(withTitle: "Error", message: "Please enter a valid email address.")
                 return
             }
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in

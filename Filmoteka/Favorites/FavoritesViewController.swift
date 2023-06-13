@@ -9,44 +9,26 @@ import UIKit
 
 final class FavoritesViewController: UIViewController {
     
-    let favoritiesViewModel = FavoritesViewModel()
-    let homeViewModel = HomeViewModel()
     var placeholderLabel = UILabel()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         self.tableView.register(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
         tableView.reloadData()
-        setupPlaceholderLabel()
-        updatePlaceholderVisibility()
-    }
-    
-    func setupPlaceholderLabel() {
-        placeholderLabel = UILabel()
-        placeholderLabel.text = "No favorites yet"
-        placeholderLabel.font = UIFont.systemFont(ofSize: 28)
-        placeholderLabel.textAlignment = .center
-        placeholderLabel.textColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
-        placeholderLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(placeholderLabel)
-        
-        NSLayoutConstraint.activate([
-            placeholderLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            placeholderLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-    }
-    
-    func updatePlaceholderVisibility() {
-        placeholderLabel.isHidden = !favoritiesViewModel.favoritesList.isEmpty
-        tableView.isHidden = favoritiesViewModel.favoritesList.isEmpty
+        appDelegate.homeViewModel.updateFavorites = { [weak self] favorites in
+            self?.appDelegate.homeViewModel.favoriteMovieArray = favorites
+            self?.tableView.reloadData()
+        }
     }
 }
 
-extension FavoritesViewController: UITableViewDataSource {
+extension FavoritesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoritiesViewModel.favoritesList.count
+        return appDelegate.homeViewModel.favoriteMovieArray.count
     }
     
     
@@ -57,10 +39,10 @@ extension FavoritesViewController: UITableViewDataSource {
             return cell
         }
         
-        let movie = homeViewModel.favoriteMovieArray[indexPath.row]
+        let movie = appDelegate.homeViewModel.favoriteMovieArray[indexPath.row]
         let m = MovieCellViewModel.init(movie: movie)
         movieCell.setUpData(viewModel: m)
-       
+        
         return movieCell
     }
 }

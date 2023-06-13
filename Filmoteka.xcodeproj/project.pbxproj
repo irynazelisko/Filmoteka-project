@@ -10,14 +10,12 @@
 		0C4B2A3826F7015BE8ACA61F /* Pods_Filmoteka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017EA276AB21D1AD867A875D /* Pods_Filmoteka.framework */; };
 		821E14932A38A6C10011E8CD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821E14922A38A6C10011E8CD /* FirestoreService.swift */; };
 		829FC3D92A325AF9001D02A2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FC3D82A325AF9001D02A2 /* LogInViewController.swift */; };
-		829FC3DD2A327757001D02A2 /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = 829FC3DC2A327756001D02A2 /* Poppins */; };
 		82AA4BFE2A35081F00580791 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4BFD2A35081F00580791 /* APIManager.swift */; };
 		82AA4C012A350E6400580791 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C002A350E6400580791 /* MovieCellViewModel.swift */; };
 		82AA4C032A36684300580791 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C022A36684300580791 /* ProfileViewController.swift */; };
 		82AA4C052A370ACC00580791 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C042A370ACC00580791 /* MovieDetailsViewController.swift */; };
 		82AA4C082A37123300580791 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C072A37123300580791 /* MovieDetailsViewModel.swift */; };
 		82AA4C0B2A37B84100580791 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C0A2A37B84100580791 /* FavoritesViewController.swift */; };
-		82AA4C0D2A37B85C00580791 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C0C2A37B85C00580791 /* FavoritesViewModel.swift */; };
 		82AA4C0F2A385B1900580791 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C0E2A385B1900580791 /* HomeViewModel.swift */; };
 		82ABDE702A34AE5E00DEBA09 /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ABDE6E2A34AE5E00DEBA09 /* MoviesTableViewCell.swift */; };
 		82ABDE712A34AE5E00DEBA09 /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82ABDE6F2A34AE5E00DEBA09 /* MoviesTableViewCell.xib */; };
@@ -38,14 +36,12 @@
 		1D1BD474EA6EA77D2342BE8B /* Pods-Filmoteka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmoteka.release.xcconfig"; path = "Target Support Files/Pods-Filmoteka/Pods-Filmoteka.release.xcconfig"; sourceTree = "<group>"; };
 		821E14922A38A6C10011E8CD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		829FC3D82A325AF9001D02A2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		829FC3DC2A327756001D02A2 /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		82AA4BFD2A35081F00580791 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		82AA4C002A350E6400580791 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		82AA4C022A36684300580791 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		82AA4C042A370ACC00580791 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		82AA4C072A37123300580791 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		82AA4C0A2A37B84100580791 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
-		82AA4C0C2A37B85C00580791 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		82AA4C0E2A385B1900580791 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		82ABDE6E2A34AE5E00DEBA09 /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		82ABDE6F2A34AE5E00DEBA09 /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
@@ -122,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				82AA4C0A2A37B84100580791 /* FavoritesViewController.swift */,
-				82AA4C0C2A37B85C00580791 /* FavoritesViewModel.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -196,7 +191,6 @@
 				82AA4BFF2A350E3B00580791 /* ViewModel */,
 				82ED44E92A3246F10067B4CB /* Assets.xcassets */,
 				82ED44EB2A3246F10067B4CB /* LaunchScreen.storyboard */,
-				829FC3DC2A327756001D02A2 /* Poppins */,
 				82ED44EE2A3246F10067B4CB /* Info.plist */,
 				82ED44F42A324D7A0067B4CB /* GoogleService-Info.plist */,
 			);
@@ -282,7 +276,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				829FC3DD2A327757001D02A2 /* Poppins in Resources */,
 				82ED44ED2A3246F10067B4CB /* LaunchScreen.storyboard in Resources */,
 				82ED44F52A324D7A0067B4CB /* GoogleService-Info.plist in Resources */,
 				82ED44EA2A3246F10067B4CB /* Assets.xcassets in Resources */,
@@ -340,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82AA4C0D2A37B85C00580791 /* FavoritesViewModel.swift in Sources */,
 				82ABDE702A34AE5E00DEBA09 /* MoviesTableViewCell.swift in Sources */,
 				829FC3D92A325AF9001D02A2 /* LogInViewController.swift in Sources */,
 				82AA4C0F2A385B1900580791 /* HomeViewModel.swift in Sources */,

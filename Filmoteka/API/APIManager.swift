@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MBProgressHUD
 
 final class APIManager {
     static let shared = APIManager()
@@ -19,7 +20,19 @@ final class APIManager {
             return
         }
         
+        DispatchQueue.main.async {
+            if let window = UIApplication.shared.windows.first {
+                MBProgressHUD.showAdded(to: window, animated: true)
+            }
+        }
+        
         URLSession.shared.dataTask(with: url) { [self] data, response, error in
+            DispatchQueue.main.async {
+                if let window = UIApplication.shared.windows.first {
+                    MBProgressHUD.hide(for: window, animated: true)
+                }
+            }
+            
             if let error = error {
                 completion(nil, error)
                 return

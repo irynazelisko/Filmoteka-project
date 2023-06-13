@@ -10,8 +10,7 @@ import Firebase
 
 final class HomeViewController: UIViewController {
     
-    let homeViewModel = HomeViewModel()
-    let favoritiesViewModel = FavoritesViewModel()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -21,17 +20,16 @@ final class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
-//        searchBar.barTintColor = UIColor(red: 0.8, green: 0.8, blue: 1.0, alpha: 1.0)
         if let searchTextField = searchBar.value(forKey: "searchField") as? UITextField {
             searchTextField.textColor = UIColor.white
         }
         self.tabBarController?.navigationItem.hidesBackButton = true
         self.tableView.register(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
-        homeViewModel.searchMovies(withQuery: "action")
-        homeViewModel.updateTableView = { [weak self] in
+        appDelegate.homeViewModel.searchMovies(withQuery: "action")
+        appDelegate.homeViewModel.updateTableView = { [weak self] in
             self?.tableView.reloadData()
         }
-       
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieDetails" {
@@ -47,12 +45,12 @@ final class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        homeViewModel.movieCells.count
+        appDelegate.homeViewModel.movieCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableViewCell", for: indexPath) as! MoviesTableViewCell
-        let movie = homeViewModel.movieCells[indexPath.row]
+        let movie =  appDelegate.homeViewModel.movieCells[indexPath.row]
         cell.titleLabel.text = movie.title
         cell.yearLabel.text = movie.year
         cell.genreLabel.text = movie.genre
@@ -63,7 +61,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.posterImageView.image = image
         }
         
-        let icon = homeViewModel.favoriteIcon(id: movie.id)
+        let icon =  appDelegate.homeViewModel.favoriteIcon(id: movie.id)
         cell.upDateFavoriteButton(icon: icon)
         
         return cell
@@ -74,17 +72,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedMovie = homeViewModel.movieCells[indexPath.row]
+        let selectedMovie =  appDelegate.homeViewModel.movieCells[indexPath.row]
         performSegue(withIdentifier: "showMovieDetails", sender: selectedMovie)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let movie = homeViewModel.movieCells[indexPath.row]
+        let movie = appDelegate.homeViewModel.movieCells[indexPath.row]
         
         // Створюємо favorite action
         let favoriteAction = UIContextualAction(style: .normal, title: "Favorite") { [weak self] (action, view, completion) in
-            self?.homeViewModel.addToFavorites(movie: movie)
-            if let icon = self?.homeViewModel.favoriteIcon(id: movie.id) {
+            self?.appDelegate.homeViewModel.addToFavorites(movie: movie)
+            if let icon = self?.appDelegate.homeViewModel.favoriteIcon(id: movie.id) {
                 if let cell = tableView.cellForRow(at: indexPath) as? MoviesTableViewCell {
                     cell.upDateFavoriteButton(icon: icon)
                 }
@@ -95,10 +93,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         favoriteAction.backgroundColor = .lightGray
         
         
-        // Створюємо unfavorite action
         let unfavoriteAction = UIContextualAction(style: .destructive, title: "Unfavorite") { [weak self] (action, view, completion) in
-            self?.homeViewModel.removeFromFavorites(with: movie.id)
-            if let icon = self?.homeViewModel.favoriteIcon(id: movie.id) {
+            self?.appDelegate.homeViewModel.removeFromFavorites(with: movie.id)
+            if let icon = self?.appDelegate.homeViewModel.favoriteIcon(id: movie.id) {
                 if let cell = tableView.cellForRow(at: indexPath) as? MoviesTableViewCell {
                     cell.upDateFavoriteButton(icon: icon)
                 }
@@ -107,7 +104,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             completion(true)
         }
         
-        // Дії які виконуються під час проведення пальцем по рядках таблиці
         let configuration = UISwipeActionsConfiguration(actions: [unfavoriteAction, favoriteAction])
         return configuration
     }
@@ -115,9 +111,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Search Bar Delegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        homeViewModel.searchMovies(withQuery: searchText)
+        appDelegate.homeViewModel.searchMovies(withQuery: searchText)
     }
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }

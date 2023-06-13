@@ -12,7 +12,7 @@ import FirebaseFirestore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let homeViewModel = HomeViewModel()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
