@@ -8,12 +8,14 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController {
-   
+final class HomeViewController: UIViewController {
+    
     let homeViewModel = HomeViewModel()
+    let favoritiesViewModel = FavoritesViewModel()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -25,9 +27,12 @@ class HomeViewController: UIViewController {
         self.tableView.register(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
         homeViewModel.searchMovies(withQuery: "action")
         homeViewModel.updateTableView = { [weak self] in
-                    self?.tableView.reloadData()
-                }
+            self?.tableView.reloadData()
+        }
+        favoritiesViewModel.favoritesList = homeViewModel.favoriteMovieArray
     }
+    
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,7 +59,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.yearLabel.text = movie.year
         cell.genreLabel.text = movie.genre
         cell.posterImageView.image = UIImage(named: movie.posterImageView)
-    
+        
         let viewModel = MovieCellViewModel(movie: movie)
         viewModel.loadImage { image in
             cell.posterImageView.image = image
@@ -104,16 +109,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             completion(true)
         }
         
-        
         // Дії які виконуються під час проведення пальцем по рядках таблиці
         let configuration = UISwipeActionsConfiguration(actions: [unfavoriteAction, favoriteAction])
         return configuration
     }
-    
 }
-
-
-
 // MARK: - Search Bar Delegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

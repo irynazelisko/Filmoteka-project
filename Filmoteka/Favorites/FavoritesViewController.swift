@@ -11,7 +11,7 @@ final class FavoritesViewController: UIViewController {
     
     let favoritiesViewModel = FavoritesViewModel()
     let homeViewModel = HomeViewModel()
-   
+    
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()

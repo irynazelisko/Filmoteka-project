@@ -14,7 +14,6 @@ protocol MovieCellPresentationModel {
     var genre: String { get }
     var posterImageView: String { get }
     var plot: String { get }
-   
     func loadImage(completion: @escaping (UIImage?) -> Void)
 }
 

@@ -80,7 +80,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="favoriteButton" destination="PuS-8V-FWu" id="HPW-Vv-K6g"/>
+                <outlet property="favoriteButton" destination="PuS-8V-FWu" id="FVO-6p-meY"/>
                 <outlet property="genreLabel" destination="7jo-3n-5NG" id="rZv-wV-J6t"/>
                 <outlet property="posterImageView" destination="26m-ul-zXO" id="sbj-Js-Ma5"/>
                 <outlet property="titleLabel" destination="6pm-MF-Ux0" id="on3-ad-V7H"/>

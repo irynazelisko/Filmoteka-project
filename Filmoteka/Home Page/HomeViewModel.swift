@@ -21,15 +21,16 @@ final class HomeViewModel {
             }
             
             if let movies = movies {
-                self.movieCells = movies.map { MovieCell(title: $0.title,
-                                                         year: $0.year,
-                                                         genre: $0.genre,
-                                                         posterImageView: $0.posterImageView,
-                                                         plot: $0.plot,
-                                                         url: $0.url,
-                                                         trackViewUrl: $0.trackViewUrl,
-                                                         id: $0.id
-                ) }
+                       self.movieCells = movies.map { movie in
+                           return MovieCell(title: movie.title,
+                                            year: movie.year,
+                                            genre: movie.genre,
+                                            posterImageView: movie.posterImageView,
+                                            plot: movie.plot,
+                                            url: movie.url,
+                                            trackViewUrl: movie.trackViewUrl,
+                                            id: movie.id)
+                       }
                 DispatchQueue.main.async {
                     self.updateTableView?()
                 }
@@ -58,5 +59,4 @@ final class HomeViewModel {
             favoriteMovieArray.remove(at: index)
         }
     }
-    
 }

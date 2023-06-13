@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIManager {
+final class APIManager {
     static let shared = APIManager()
     private let baseURL = "https://itunes.apple.com/search"
     

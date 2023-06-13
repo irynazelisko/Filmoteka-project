@@ -7,6 +7,6 @@
 
 import Foundation
  
-class MovieDetailsViewModel {
+final class MovieDetailsViewModel {
     var movie: MovieCell?
 }

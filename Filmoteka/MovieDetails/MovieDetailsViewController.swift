@@ -10,7 +10,7 @@ import AVKit
 import AVFoundation
 
 final class MovieDetailsViewController: UIViewController {
-  
+    
     let viewModel = MovieDetailsViewModel()
     
     private var moviePlayerController = AVPlayerViewController()
@@ -37,11 +37,11 @@ final class MovieDetailsViewController: UIViewController {
             genreLabel.text = movie.genre
             yearLabel.text = movie.year
             plotLabel.text = movie.plot
-           
+            
             let viewModel = MovieCellViewModel(movie: movie)
-               viewModel.loadImage { image in
-                   self.posterImageView.image = image
-               }
+            viewModel.loadImage { image in
+                self.posterImageView.image = image
+            }
         }
     }
     private func showAlert(withTitle title: String, message: String) {
@@ -53,14 +53,14 @@ final class MovieDetailsViewController: UIViewController {
     
     private func playVideo() {
         guard let urlString = viewModel.movie?.url, let url = URL(string: urlString) else {
-                showAlert(withTitle: "Trailer is not available!", message: "Try again")
-                return
-            }
-            playerView = AVPlayer(url: url)
-            moviePlayerController.player = playerView
-            self.present(moviePlayerController, animated: true) {
-                self.moviePlayerController.player?.play()
-            }
+            showAlert(withTitle: "Trailer is not available!", message: "Try again")
+            return
+        }
+        playerView = AVPlayer(url: url)
+        moviePlayerController.player = playerView
+        self.present(moviePlayerController, animated: true) {
+            self.moviePlayerController.player?.play()
+        }
         
     }
     
@@ -76,7 +76,7 @@ final class MovieDetailsViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         
         activityViewController.popoverPresentationController?.barButtonItem = sender
-    
+        
         present(activityViewController, animated: true, completion: nil)
     }
 }
