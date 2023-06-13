@@ -15,7 +15,7 @@
 ## ABOUT the App
 
 ## Technologies
-**API**: [iTunes Search Api](#https://performance-partners.apple.com/search-api)  </br>
+**API**: <a href="[https://www.google.com/](https://performance-partners.apple.com/search-api)" target="_blank">iTunes Search Api</a> </br>
 **Framework**: UIKit  </br>
 **Architecture pattern**: MVVM </br>
 
