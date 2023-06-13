@@ -15,7 +15,7 @@ The main idea of the program is to create a mobile application that provides use
 In addition, the program has functionality for logging in and registering users, displaying user profiles and sharing movies.
 
 ## Technologies
-**API**: https://www.google.com/](https://performance-partners.apple.com/search-api </br>
+**API**: https://performance-partners.apple.com/search-api </br>
 **Framework**: UIKit  </br>
 **Architecture pattern**: MVVM </br>
 **Dependency manager:** CocoaPods </br>
