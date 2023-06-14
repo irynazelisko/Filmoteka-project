@@ -50,21 +50,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MoviesTableViewCell", for: indexPath) as! MoviesTableViewCell
+        guard let movieCell = cell as? MoviesTableViewCell else {
+            return cell
+        }
         let movie =  appDelegate.homeViewModel.movieCells[indexPath.row]
-        cell.titleLabel.text = movie.title
-        cell.yearLabel.text = movie.year
-        cell.genreLabel.text = movie.genre
-        cell.posterImageView.image = UIImage(named: movie.posterImage)
+        movieCell.titleLabel.text = movie.title
+        movieCell.yearLabel.text = movie.year
+        movieCell.genreLabel.text = movie.genre
+        movieCell.posterImageView.image = UIImage(named: movie.posterImage)
         
         let viewModel = MovieCellViewModel(movie: movie)
         viewModel.loadImage { image in
-            cell.posterImageView.image = image
+            movieCell.posterImageView.image = image
         }
         
         let icon =  appDelegate.homeViewModel.favoriteIcon(id: movie.id)
-        cell.upDateFavoriteButton(icon: icon)
+        movieCell.upDateFavoriteButton(icon: icon)
         
-        return cell
+        return movieCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
