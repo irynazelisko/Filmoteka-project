@@ -21,6 +21,7 @@
 		82ABDE712A34AE5E00DEBA09 /* MoviesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82ABDE6F2A34AE5E00DEBA09 /* MoviesTableViewCell.xib */; };
 		82ABDE742A34B08200DEBA09 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ABDE732A34B08200DEBA09 /* HomeViewController.swift */; };
 		82ABDE762A34BFCA00DEBA09 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ABDE752A34BFC900DEBA09 /* MovieCell.swift */; };
+		82D2359A2A3BBF25006B6744 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D235992A3BBF25006B6744 /* UserDefaults.swift */; };
 		82D99A382A33BA9A0096B690 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D99A372A33BA9A0096B690 /* SignUpViewController.swift */; };
 		82ED44E12A3246F00067B4CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED44E02A3246F00067B4CB /* AppDelegate.swift */; };
 		82ED44E32A3246F00067B4CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED44E22A3246F00067B4CB /* SceneDelegate.swift */; };
@@ -47,6 +48,7 @@
 		82ABDE6F2A34AE5E00DEBA09 /* MoviesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesTableViewCell.xib; sourceTree = "<group>"; };
 		82ABDE732A34B08200DEBA09 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		82ABDE752A34BFC900DEBA09 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		82D235992A3BBF25006B6744 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		82D99A372A33BA9A0096B690 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		82ED44DD2A3246F00067B4CB /* Filmoteka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filmoteka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ED44E02A3246F00067B4CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,24 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		82D2359B2A3C621D006B6744 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				82D235992A3BBF25006B6744 /* UserDefaults.swift */,
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		82D2359C2A3C6242006B6744 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				82AA4C102A385B1F00580791 /* Home Page */,
+				82AA4C062A37120E00580791 /* MovieDetails */,
+				821E14942A38D1420011E8CD /* Profile Page */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		82ED44D42A3246F00067B4CB = {
 			isa = PBXGroup;
 			children = (
@@ -179,10 +199,9 @@
 		82ED44DF2A3246F00067B4CB /* Filmoteka */ = {
 			isa = PBXGroup;
 			children = (
-				821E14942A38D1420011E8CD /* Profile Page */,
 				82ED44F62A3251260067B4CB /* App */,
-				82AA4C102A385B1F00580791 /* Home Page */,
-				82AA4C062A37120E00580791 /* MovieDetails */,
+				82D2359C2A3C6242006B6744 /* Pages */,
+				82D2359B2A3C621D006B6744 /* User Defaults */,
 				82ABDE782A3506DF00DEBA09 /* API */,
 				82ABDE722A34AE7800DEBA09 /* Authentication */,
 				82AA4C092A37B82B00580791 /* Favorites */,
@@ -338,6 +357,7 @@
 				82AA4C0F2A385B1900580791 /* HomeViewModel.swift in Sources */,
 				82AA4C0B2A37B84100580791 /* FavoritesViewController.swift in Sources */,
 				82ED44E52A3246F00067B4CB /* WelcomeViewController.swift in Sources */,
+				82D2359A2A3BBF25006B6744 /* UserDefaults.swift in Sources */,
 				82AA4C012A350E6400580791 /* MovieCellViewModel.swift in Sources */,
 				82AA4BFE2A35081F00580791 /* APIManager.swift in Sources */,
 				82ED44E12A3246F00067B4CB /* AppDelegate.swift in Sources */,

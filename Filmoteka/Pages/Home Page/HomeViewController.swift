@@ -11,6 +11,7 @@ import Firebase
 final class HomeViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let userDefaults = UserDefaults.standard
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!

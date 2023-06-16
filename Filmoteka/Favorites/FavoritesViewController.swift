@@ -11,6 +11,7 @@ final class FavoritesViewController: UIViewController {
     
     var placeholderLabel = UILabel()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let userDefaults = UserDafaultsManager()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -22,7 +23,9 @@ final class FavoritesViewController: UIViewController {
         appDelegate.homeViewModel.updateFavorites = { [weak self] favorites in
             self?.appDelegate.homeViewModel.favoriteMovieArray = favorites
             self?.tableView.reloadData()
+            self?.userDefaults.saveFavorites()
         }
+        userDefaults.loadFavorites()
     }
 }
 
