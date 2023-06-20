@@ -27,10 +27,7 @@ final class ProfileViewController: UIViewController, UIImagePickerControllerDele
     }
     
     func setBorder() {
-        profileImageView.layer.masksToBounds = true
-        profileImageView.layer.borderWidth = 1.5
-        profileImageView.layer.borderColor = UIColor.white.cgColor
-        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 3
     }
     
     func updateProfile() {

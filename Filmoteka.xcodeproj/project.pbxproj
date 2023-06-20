@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C4B2A3826F7015BE8ACA61F /* Pods_Filmoteka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017EA276AB21D1AD867A875D /* Pods_Filmoteka.framework */; };
 		821E14932A38A6C10011E8CD /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821E14922A38A6C10011E8CD /* FirestoreService.swift */; };
-		829FC3D92A325AF9001D02A2 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FC3D82A325AF9001D02A2 /* LogInViewController.swift */; };
+		826689C22A42195700D7EC0E /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826689C12A42195700D7EC0E /* AuthViewController.swift */; };
 		82AA4BFE2A35081F00580791 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4BFD2A35081F00580791 /* APIManager.swift */; };
 		82AA4C012A350E6400580791 /* MovieCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C002A350E6400580791 /* MovieCellViewModel.swift */; };
 		82AA4C032A36684300580791 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82AA4C022A36684300580791 /* ProfileViewController.swift */; };
@@ -22,7 +22,6 @@
 		82ABDE742A34B08200DEBA09 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ABDE732A34B08200DEBA09 /* HomeViewController.swift */; };
 		82ABDE762A34BFCA00DEBA09 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ABDE752A34BFC900DEBA09 /* MovieCell.swift */; };
 		82D2359A2A3BBF25006B6744 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D235992A3BBF25006B6744 /* UserDefaults.swift */; };
-		82D99A382A33BA9A0096B690 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D99A372A33BA9A0096B690 /* SignUpViewController.swift */; };
 		82ED44E12A3246F00067B4CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED44E02A3246F00067B4CB /* AppDelegate.swift */; };
 		82ED44E32A3246F00067B4CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED44E22A3246F00067B4CB /* SceneDelegate.swift */; };
 		82ED44E52A3246F00067B4CB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ED44E42A3246F00067B4CB /* WelcomeViewController.swift */; };
@@ -36,7 +35,7 @@
 		017EA276AB21D1AD867A875D /* Pods_Filmoteka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filmoteka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1BD474EA6EA77D2342BE8B /* Pods-Filmoteka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmoteka.release.xcconfig"; path = "Target Support Files/Pods-Filmoteka/Pods-Filmoteka.release.xcconfig"; sourceTree = "<group>"; };
 		821E14922A38A6C10011E8CD /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
-		829FC3D82A325AF9001D02A2 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		826689C12A42195700D7EC0E /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		82AA4BFD2A35081F00580791 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		82AA4C002A350E6400580791 /* MovieCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCellViewModel.swift; sourceTree = "<group>"; };
 		82AA4C022A36684300580791 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +48,6 @@
 		82ABDE732A34B08200DEBA09 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		82ABDE752A34BFC900DEBA09 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		82D235992A3BBF25006B6744 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		82D99A372A33BA9A0096B690 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		82ED44DD2A3246F00067B4CB /* Filmoteka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filmoteka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ED44E02A3246F00067B4CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82ED44E22A3246F00067B4CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,9 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				82ED44E42A3246F00067B4CB /* WelcomeViewController.swift */,
-				829FC3D82A325AF9001D02A2 /* LogInViewController.swift */,
-				82D99A372A33BA9A0096B690 /* SignUpViewController.swift */,
 				821E14922A38A6C10011E8CD /* FirestoreService.swift */,
+				826689C12A42195700D7EC0E /* AuthViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -353,7 +350,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82ABDE702A34AE5E00DEBA09 /* MoviesTableViewCell.swift in Sources */,
-				829FC3D92A325AF9001D02A2 /* LogInViewController.swift in Sources */,
 				82AA4C0F2A385B1900580791 /* HomeViewModel.swift in Sources */,
 				82AA4C0B2A37B84100580791 /* FavoritesViewController.swift in Sources */,
 				82ED44E52A3246F00067B4CB /* WelcomeViewController.swift in Sources */,
@@ -366,8 +362,8 @@
 				82ED44E32A3246F00067B4CB /* SceneDelegate.swift in Sources */,
 				82AA4C082A37123300580791 /* MovieDetailsViewModel.swift in Sources */,
 				82ABDE742A34B08200DEBA09 /* HomeViewController.swift in Sources */,
-				82D99A382A33BA9A0096B690 /* SignUpViewController.swift in Sources */,
 				82ABDE762A34BFCA00DEBA09 /* MovieCell.swift in Sources */,
+				826689C22A42195700D7EC0E /* AuthViewController.swift in Sources */,
 				82AA4C052A370ACC00580791 /* MovieDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +521,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -556,7 +552,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

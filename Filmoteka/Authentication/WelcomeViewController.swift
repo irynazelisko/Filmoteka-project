@@ -30,11 +30,24 @@ final class WelcomeViewController: UIViewController {
         logInButton.layer.cornerRadius = 14
         signUpButton.layer.cornerRadius = 14
         
-        if let currentUser = Auth.auth().currentUser {
+        if let _ = Auth.auth().currentUser {
             self.performSegue(withIdentifier: "logInSegue", sender: self)
         }
     }
     
+    @IBAction func logInPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "logInSegue", sender: AuthViewController.AuthMode.logIn)
+    }
     
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "logInSegue", sender: AuthViewController.AuthMode.signUp)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "logInSegue", let authMode = sender as? AuthViewController.AuthMode {
+            if let authViewController = segue.destination as? AuthViewController {
+                authViewController.authMode = authMode
+            }
+        }
+    }
 }
-

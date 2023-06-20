@@ -15,7 +15,7 @@ final class UserDafaultsManager {
     
     func saveFavorites() {
         let favorites = appDelegate.homeViewModel.favoriteMovieArray
-        let encodedData = try? JSONEncoder().encode(favorites)
+        let _ = try? JSONEncoder().encode(favorites)
         userDefaults.set(favorites, forKey: "Favorites")
     }
     
