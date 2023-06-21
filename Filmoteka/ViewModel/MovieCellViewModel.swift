@@ -39,7 +39,12 @@ final class MovieCellViewModel: MovieCellPresentationModel {
             completion(nil)
             return
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        let highQualityURL = url.absoluteString.replacingOccurrences(of: "100x100", with: "600x600")
+            guard let highQualityImageURL = URL(string: highQualityURL) else {
+                completion(nil)
+                return
+            }
+        URLSession.shared.dataTask(with: highQualityImageURL) { data, response, error in
             if let imageData = data {
                 if let image = UIImage(data: imageData) {
                     DispatchQueue.main.async {
