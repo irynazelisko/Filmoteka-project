@@ -30,26 +30,10 @@ In addition, the program has functionality for logging in and registering users,
 <img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/08929a95-bfc7-4b97-9831-eb36b2286311" width="200" height="400">
 
 <h2>Pages</h2>
-<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/aac594c5-ede2-4f49-afd7-e537cc838cad" width="200" height="400">
-<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/138c3ebf-32d0-41ae-9599-82ffcbbc8878" width="200" height="400">
-<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/d7374e99-83b7-45aa-b8fc-88dea556dd01" width="200" height="400">
-<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/3e8dddfe-028a-4f90-8c27-0d7929882a6a" width="200" height="400">
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
+<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/218321cc-85fc-44f8-861d-8d17ee900bb7" width="200" height="400">
+<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/9ad3a450-9e1c-4f00-b0df-60d3f7a4febd" width="200" height="400">
+<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/c943b736-131c-41e8-b338-167f378c30df" width="200" height="400">
+<img src="https://github.com/irynazelisko/Filmoteka-project/assets/115024479/f511b702-bcac-4b21-b732-b74d95fd21dc" width="200" height="400">
 
 
 
